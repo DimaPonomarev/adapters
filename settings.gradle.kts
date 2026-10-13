@@ -16,14 +16,15 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
-        google {
-            mavenContent {
-                includeGroupAndSubgroups("androidx")
-                includeGroupAndSubgroups("com.android")
-                includeGroupAndSubgroups("com.google")
+        maven { url = uri("https://nexus.europlan.ru/repository/maven/")}
+        maven { url = uri("https://nexus.europlan.ru/repository/maven-google/")}
+        maven { url = uri("https://nexus.europlan.ru/repository/maven-jitpack/")}
+        maven { url = uri("https://proget.europlan.ru/maven2/maven")
+            credentials {
+                username = "publisher"
+                password = "EuroplanPublisher"
             }
         }
-        mavenCentral()
     }
 }
 

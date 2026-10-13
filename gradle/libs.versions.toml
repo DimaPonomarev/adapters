@@ -1,7 +1,7 @@
 [versions]
 agp = "9.1.1"
 android-compileSdk = "37"
-android-minSdk = "24"
+android-minSdk = "26"
 android-targetSdk = "37"
 androidx-activity = "1.13.0"
 androidx-appcompat = "1.8.0"
@@ -13,8 +13,20 @@ composeMultiplatform = "1.12.1"
 junit = "4.13.2"
 kotlin = "2.4.20"
 material3 = "1.12.0-alpha03"
+jetbrainsKotlinJvm = "2.4.20"
+mokoMvvmVersion = "0.16.1"
+kotlinxDateTimeVersion = "0.6.2"
+multiplatformSettingsVersion = "1.3.0"
+kotlinxSerializationVersion = "1.7.3"
+koin = "4.2.2"
+kotlinxCoroutinesVersion = "1.9.0"
+napierVersion = "2.7.1"
+klockVersion = "3.4.0"
+sharedApiVersion = "1.0.20"
 
 [libraries]
+sharedApi = { module = "ru.europlan.mws.api:shared-api", version.ref = "sharedApiVersion" }
+
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 kotlin-testJunit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
 junit = { module = "junit:junit", version.ref = "junit" }
@@ -32,6 +44,16 @@ compose-material3 = { module = "org.jetbrains.compose.material3:material3", vers
 compose-ui = { module = "org.jetbrains.compose.ui:ui", version.ref = "composeMultiplatform" }
 compose-components-resources = { module = "org.jetbrains.compose.components:components-resources", version.ref = "composeMultiplatform" }
 compose-uiToolingPreview = { module = "org.jetbrains.compose.ui:ui-tooling-preview", version.ref = "composeMultiplatform" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesVersion" }
+kotlinx-serialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationVersion" }
+kotlinx-dateTime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDateTimeVersion" }
+androidx-lifecycle-viewModel = {module = "androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle"}
+moko-mvvm-core = { module = "dev.icerock.moko:mvvm-core", version.ref = "mokoMvvmVersion" }
+moko-mvvm-liveData = { module = "dev.icerock.moko:mvvm-livedata", version.ref = "mokoMvvmVersion" }
+koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koin" }
+multiplatformSettings = { module = "com.russhwolf:multiplatform-settings", version.ref = "multiplatformSettingsVersion" }
+klock = { module = "com.soywiz.korlibs.klock:klock", version.ref = "klockVersion" }
+napier = { module = "io.github.aakira:napier", version.ref = "napierVersion" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -39,3 +61,4 @@ androidMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library",
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+jetbrainsKotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "jetbrainsKotlinJvm" }

@@ -15,12 +15,12 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     android {
        namespace = "org.example.project.sharedLogic"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
-    
+
        compilerOptions {
            jvmTarget = JvmTarget.JVM_11
        }
@@ -31,9 +31,26 @@ kotlin {
            isIncludeAndroidResources = true
        }
     }
-    
+
     sourceSets {
         commonMain.dependencies {
+            implementation(libs.kotlinx.coroutines.core)
+            implementation(libs.kotlinx.serialization)
+            implementation(libs.kotlinx.dateTime)
+
+            implementation(libs.androidx.lifecycle.viewModel)
+
+            // moko libs inside this tag must be removed
+            implementation(libs.moko.mvvm.core)
+            implementation(libs.moko.mvvm.liveData)
+
+            implementation(libs.koin.compose.viewmodel)
+
+            implementation(libs.klock)
+            implementation(libs.multiplatformSettings)
+            api(libs.sharedApi)
+//            api(project(":shared-api"))
+
             // put your Multiplatform dependencies here
         }
         commonTest.dependencies {
